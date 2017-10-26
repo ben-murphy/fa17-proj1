@@ -7,4 +7,4 @@ Rails.application.routes.draw do
   get "create_pokemon", to:"pokemons#new"
   post "create_pokemon", to: "pokemons#new"
   post "/pokemon", to: "home#index"
-end
+ end

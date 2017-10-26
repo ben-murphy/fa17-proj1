@@ -1,5 +1,5 @@
-<%= form_for Pokemon.new, url: "pokemon#new", :method=> :POST, html: {class: "nifty_form"} do |f| %>
+<%= form_for Pokemon.new, url: create_pokemon_path, :method=> :POST, html: {class: "nifty_form"} do %>
 	<%= label_tag(:name, "Name") %>
 	<%= text_field_tag(:name, nil) %>
-	<%= f.submit "Create PokeyManz" %>
+	<%= submit_tag "Create PokeyManz" %>
 <% end %>
