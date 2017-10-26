@@ -10,3 +10,7 @@ All your Pokemon
 	<br />
 	<% end %>	
 <% end %>
+
+<%if @trainer.id == current_trainer.id%>
+	<%= button_to "Create a Pokemon!", create_pokemon_path(id: @trainer.id), :class => "button medium", :method => :get %>
+<%end%>

@@ -21,4 +21,13 @@ class PokemonsController < ApplicationController
 		end
 		redirect_to "/trainers/"+trainer.to_s
 	end
+
+	def new
+		poke = Pokemon.new
+		poke.level = 1
+		poke.health = 100
+		poke.name = params[:name]
+		poke.trainer_id = current_trainer.id
+		poke.save
+	end
 end

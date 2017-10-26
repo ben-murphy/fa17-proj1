@@ -15,6 +15,7 @@ I passed in "/trainers"+trainer.to_s where trainer was the trainer's id.
 
 # Question 5: Explain how putting this line "flash[:error] = @pokemon.errors.full_messages.to_sentence" shows error messages on your form.
 
+
 # Give us feedback on the project and decal below!
 
 # Extra credit: Link your Heroku deployed app
