@@ -14,7 +14,7 @@ PokeyManz
 I passed in "/trainers"+trainer.to_s where trainer was the trainer's id. 
 
 # Question 5: Explain how putting this line "flash[:error] = @pokemon.errors.full_messages.to_sentence" shows error messages on your form.
-Flash is rails's way of sending updates to the user. flash[:error] is not instrinsically set, so you get to set it to be whatever you want.  So, if you want to see whatever error messages have come up in relation to pokemon, you must set the value of flash[:error] to be the pokemon's error message.
+Flash is rails's way of sending updates to the user. flash[:error] is not instrinsically set, so you get to set it to be whatever you want.  So, if you want to see whatever error messages have come up in relation to pokemon, you must set the value of flash[:error] to be the pokemon's error message. This will also automatically sidplay the message.
 
 # Give us feedback on the project and decal below!
 

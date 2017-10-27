@@ -1,5 +1,4 @@
 class PokemonsController < ApplicationController
-
 	def capture
 		id = params[:id]
 		pokeymans = Pokemon.find(id)
@@ -23,6 +22,7 @@ class PokemonsController < ApplicationController
 	end
 
 	def new
+		render "new"
 	end
 
 	def create
@@ -31,10 +31,16 @@ class PokemonsController < ApplicationController
 		@poke.health = 100
 		@poke.name = params[:name]
 		@poke.trainer_id = current_trainer.id
-		if not @poke.name.nil?
+		if @poke.valid?
 			@poke.save
 			redirect_to "/trainers/"+current_trainer.id.to_s
-		end
-		
+		else 
+			if @poke.name.nil? or @poke.name == ""
+				flash.now[:error] = "Name the Pokemon something, god damn it!"
+			else
+				flash.now[:error] = "Already a pokemon named that!"
+			end		
+		end		
 	end
+
 end
