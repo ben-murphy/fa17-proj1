@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :trainers
   patch "capture", to:"pokemons#capture"
   patch "damage", to:"pokemons#damage"
-  get "create_pokemon", to:"pokemons#new"
-  post "create_pokemon", to: "pokemons#new"
+  get "create_pokemon", to:"pokemons#create"
+  post "create_pokemon", to: "pokemons#create"
   post "/pokemon", to: "home#index"
  end

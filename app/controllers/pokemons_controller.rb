@@ -23,12 +23,18 @@ class PokemonsController < ApplicationController
 	end
 
 	def new
+	end
+
+	def create
 		@poke = Pokemon.new
 		@poke.level = 1
 		@poke.health = 100
 		@poke.name = params[:name]
 		@poke.trainer_id = current_trainer.id
-		@poke.save
-		#redirect_to "/trainers/"+current_trainer.id.to_s
+		if not @poke.name.nil?
+			@poke.save
+			redirect_to "/trainers/"+current_trainer.id.to_s
+		end
+		
 	end
 end
