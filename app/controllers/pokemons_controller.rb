@@ -22,7 +22,7 @@ class PokemonsController < ApplicationController
 	end
 
 	def new
-		render "new"
+		@trainer = current_trainer
 	end
 
 	def create
